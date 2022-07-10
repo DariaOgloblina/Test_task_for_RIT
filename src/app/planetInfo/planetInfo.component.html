@@ -1,0 +1,11 @@
+<a [routerLink]="['info', id]">
+  <div class="planet-short-info" >
+    <div>
+      <h3>NAME : {{planet.name}}</h3>
+      <hr>
+      <app-mainPlanetInfoBlock
+        [planet]="planet"
+      ></app-mainPlanetInfoBlock>
+    </div>
+  </div>
+</a>

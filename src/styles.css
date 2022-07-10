@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+  background: url("space_black.jpg") repeat-y;
+  -moz-background-size: 100%; /* Firefox 3.6+ */
+  -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+  -o-background-size: 100%; /* Opera 9.6+ */
+  background-size: 100%; /* Современные браузеры */
+  color: white;
+  font-family: Courier, monospace;
+}
+
+h5{
+  font-size: large;
+  text-decoration: underline;
+}
+

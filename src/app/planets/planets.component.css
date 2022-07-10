@@ -1,0 +1,25 @@
+.button-block{
+  display: flex;
+  width: 20%;
+  margin: 2% 40%;
+  justify-content: center;
+}
+
+.button-item{
+  margin-right: 1rem;
+}
+
+button{
+  width: 3rem;
+  height: 1.5rem;
+  color: cornflowerblue;
+  border: 1px solid cornflowerblue;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+h1, h3{
+    margin-top: 3rem;
+    text-align: center;
+  }
+

@@ -1,0 +1,36 @@
+<div class="planet-information">
+  <h1>All Info about {{response.name}}</h1>
+  <app-mainPlanetInfoBlock
+    [planet]="response"
+  ></app-mainPlanetInfoBlock>
+
+  <h3>Residents</h3>
+  <hr/>
+
+  <div *ngIf="arrayOfResidents.length > 0; else notFound" class="residents-info-div">
+    <form>
+      Filter by gender:
+      Male<input type="radio" value="male" name="radioGender" (click)="genderFilter='male'; filterArrayOfResidents()">
+      Female<input type="radio" value="female" name="radioGender" (click)="genderFilter='female'; filterArrayOfResidents()">
+      N/a<input type="radio" value="n/a" name="radioGender" (click)="genderFilter='n/a'; filterArrayOfResidents()"><br/>
+      <input type="reset" value="Reset" class="reset-button" (click)="genderFilter=''; filterArrayOfResidents()">
+    </form>
+    <app-resident
+      *ngFor="let resident of filteredArrayOfResidents"
+      [resident] = "resident"
+    ></app-resident>
+  </div>
+
+  <h3>Films</h3>
+  <hr/>
+  <div *ngIf="arrayOfFilms.length > 0; else notFound" class="residents-info-div">
+    <app-film
+      *ngFor="let film of arrayOfFilms"
+      [film]="film"
+    ></app-film>
+  </div>
+
+  <ng-template #notFound>
+    <h3>Information is not found</h3>
+  </ng-template>
+</div>

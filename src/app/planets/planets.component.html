@@ -1,0 +1,18 @@
+<h1>ALL PLANETS</h1>
+<div *ngIf="arrayOfPlanets.length > 0; else noPlanets">
+  <h3>PAGE: {{page}}</h3>
+  <div  class="button-block" >
+    <button class="button-item" *ngIf="buttonPrev" (click)="getOtherPage(page - 1)"><--</button>
+    <button *ngIf="buttonNext" (click)="getOtherPage(page + 1)">--></button>
+  </div>
+
+  <app-planetInfo
+    *ngFor="let iterPlanet of arrayOfPlanets; let id=index"
+    [planet] = "iterPlanet"
+    [id] = "page * 10 + id - 9"
+  ></app-planetInfo>
+</div>
+
+<ng-template #noPlanets>
+  <h3>Planets Not Found</h3>
+</ng-template>
